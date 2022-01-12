@@ -1,0 +1,68 @@
+<template>
+    <div class="slds-m-around_medium">
+            <div class="slds-m-bottom_small">
+                <lightning-input type="text"
+                    value={sVal}
+                    label="Product Name"
+                    onchange={updateSearchKey}
+                ></lightning-input>
+            </div>
+
+            <lightning-button label="Search"
+                onclick={handleSearch}
+                variant="brand"
+            ></lightning-button>
+
+            <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-m-top_small">
+                <thead>
+                    
+                    <tr class="slds-line-height_reset">
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Product Name">Product Name</div>
+                        </th>
+
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Product Type">Product Type</div>
+                        </th>
+
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Product Quantity">Available Quantity</div>
+                        </th>
+
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Product Price">Product Price</div>
+                        </th>
+
+                        <th class="" scope="col">
+                            <div class="slds-truncate" title="Resale Product">Resale</div>
+                        </th>
+                    </tr>
+
+
+                </thead>
+
+                <tbody>
+                    <template for:each={products} for:item="Product2">
+                        <tr class="slds-hint-parent" key={Product2.Name}>
+                            <td>
+                                <div class="slds-truncate">{Product2.Name}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{Product2.Family}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{Product2.Quantity__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{Product2.Purchase_Price__c}</div>
+                            </td>
+                            <td>
+                                <div class="slds-truncate">{Product2.Resale_Product__c}</div>
+                            </td>
+                        </tr>
+                    </template>
+                </tbody>
+            </table>
+
+    </div>   
+</template>

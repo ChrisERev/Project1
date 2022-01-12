@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="carousalTest">
+    <apiVersion>52.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <target>lightning__RecordPage</target>
+        <target>lightning__HomePage</target>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+      </targets>
+    
+      <targetConfigs>
+            <targetConfig targets="lightningCommunity__Default">
+                <property name="imgsrc" type="String" default="image URL here"></property>
+                <property name="header" type="String" default="Card Header"></property>
+                <property name="description" type="String" default="Description of content"></property>
+                <property name="altText" type="String" default="alt load text"></property>
+                <property name="url" type="String" default="on click URL redirect"></property>
+            </targetConfig>
+       </targetConfigs>
+</LightningComponentBundle>
